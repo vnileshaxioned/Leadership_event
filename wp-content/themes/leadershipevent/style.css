@@ -757,9 +757,77 @@ header nav {
 .venue-tel::before { content: '\f879'; }
 /* here you go section ended here */
 
+/* contact form section started here */
+.contact .wrapper {
+  width: 100%;
+  position: relative;
+}
 
+.contact-content {
+  width: 52.5%;
+  padding: 94px 0;
+  margin: 0 auto;
+  border-radius: 20px;
+}
 
+.contact-content .contact-heading {
+  padding: 18px 6.5%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  background-color: var(--header-color);
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  text-transform: capitalize;
+}
 
+.contact-form {
+  padding: 45px 6% 39px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #fff;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group { flex-basis: 30.5%; }
+
+.form-content {
+  width: 86%;
+  padding: 13px;
+  border: none;
+  outline: none;
+  background-color: #F1F8FF;
+}
+
+.form-textarea textarea {
+  width: 95.5%;
+  padding: 13px;
+  margin-top: 18px;
+  border: none;
+  outline: none;
+  background-color: #F1F8FF;
+}
+
+.form-textarea:last-child { margin-top: 16px; }
+
+.contact-submit-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  outline: none;
+  background-color: var(--heading-color);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50px;
+}
+/* contact form section ended here */
 /*=================================
   main styling ends here
 =================================*/
