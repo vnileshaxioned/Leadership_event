@@ -480,6 +480,107 @@ header nav {
 .speaker-image-list .speaker-inner-content { width: 78%; }
 /* our speaker section ended here */
 
+/* next schedule section started here */
+.next-schedules .section-heading {
+  text-align: center;
+  padding-top: 18px;
+}
+
+.schedule-tabs {
+  padding: 42px 0;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-tab-list {
+  padding: 16px 2.4% 24px;
+  flex-basis: 30%;
+}
+
+.schedule-tab-heading {
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.schedule-date {
+  color: var(--paragraph-color);
+  font-size: 14px;
+}
+
+.schedule-tab-active {
+  box-shadow: 0 20px 50px #a3a3a3;
+  border-left: 2px solid var(--heading-color);
+}
+
+.schedule-tab-active .schedule-tab-heading { color: var(--heading-color); }
+
+.schedule-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-post-list {
+  padding: 44px 0;
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-post-list:first-child { padding-top: 0; }
+
+.schedule-post-list:last-child {
+  padding-bottom: 18px;
+  border-bottom: none;
+}
+
+.schedule-image { flex-basis: 52.5%; }
+
+.schedule-image img {
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.schedule-post-content { margin-left: 2%; }
+
+.medium-content-heading {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.schedule-post-content .paragraph { margin-top: 10px; }
+
+.schedule-info {
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.schedule-info-list:first-child { display: flex; }
+.schedule-info-image { flex-basis: 16%; }
+
+.schedule-info-image img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.schedule-content { padding: 0 10%; }
+.schedule-content-heading { font-size: 14px; }
+
+.schedule-paragraph {
+  font-size: 9px;
+  line-height: 2;
+  color: var(--paragraph-color);
+  text-transform: uppercase;
+}
+
+.schedule-info-list {
+  flex-basis: 30%;
+  font-size: 14px;
+}
+
+.schedule-duration { text-transform: uppercase; }
+.schedule-room { text-transform: capitalize; }
+/* next schedule section ended here */
 
 
 /*=================================
