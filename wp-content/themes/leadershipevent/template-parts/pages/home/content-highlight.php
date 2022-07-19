@@ -1,3 +1,10 @@
+<?php
+
+$contents = get_sub_field('highlight_content');
+
+print_r($contents);
+
+?>
 <section class="highlight">
   <div class="wrapper">
     <ul class="highlight-container">

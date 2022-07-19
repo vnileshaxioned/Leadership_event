@@ -52,7 +52,6 @@
     <!--footer section end-->
   </div>
   <!--container end-->
-<script src="assets/vendor/jquery-1.8.3.min.js"></script>
-<script src="assets/js/script.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
