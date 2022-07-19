@@ -692,6 +692,73 @@ header nav {
 }
 /* get your ticket section ended here */
 
+/* here you go section started here */
+.here-you-go { background-color: #EFF8FF; }
+.here-you-go .wrapper { padding: 92px 0; }
+
+.venue-content {
+  display: flex;
+  margin-top: 44px;
+  justify-content: space-between;
+}
+
+.venue-list { flex-basis: 48.5%; }
+
+.venue-list:last-child {
+  box-shadow: 0 14px 50px #a3a3a3;
+  border-radius: 20px;
+}
+
+.venu-right-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.venu-contact-head {
+  padding: 18px 6.5%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  background-color: var(--header-color);
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.contact-heading { font-size: 36px; }
+.venu-contact-list { padding: 0 6.5%; }
+
+.venue-address {
+  padding: 34px 0 26px;
+  display: flex;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.venue-link {
+  margin-bottom: 16px;
+  display: flex;
+  color: #847F83;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.venue-address::before,
+.venue-mail::before,
+.venue-tel::before {
+  margin-right: 2.5%;
+  font-family: 'Font Awesome 5 Free';
+  float: left;
+}
+
+.venue-address::before { content: '\f3c5'; }
+.venue-mail::before { content: '\f0e0'; }
+.venue-tel::before { content: '\f879'; }
+/* here you go section ended here */
+
+
+
 
 /*=================================
   main styling ends here
