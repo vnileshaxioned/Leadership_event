@@ -1,4 +1,4 @@
-<section class="contact" style="background-image: url('assets/images/maria-stewart-p4tj0g-_aMM-unsplash.jpg');">
+<section class="contact" style="background-image: url('<?php echo get_template_directory_uri().'/assets/images/maria-stewart-p4tj0g-_aMM-unsplash.jpg'; ?>');">
   <div class="wrapper">
     <div class="contact-content">
       <h5 class="contact-heading">Please say hi</h5>
