@@ -200,7 +200,94 @@ header nav {
 /*=================================
   main styling starts here
 =================================*/
+/* banner section started here */
+.banner .wrapper {
+  width: 100%;
+  position: relative;
+}
 
+.banner-video {
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.banner .wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(0, var(--header-color), transparent);
+}
+
+.banner-content {
+  width: 65%;
+  text-align: center;
+  padding: 90px 0 150px;
+  margin: 0 auto;
+  transform: translate(0);
+}
+
+.banner-heading {
+  margin-top: 98px;
+  font-size: 56px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.banner-heading .heading-color { text-decoration: underline; }
+.heading-color { color: var(--heading-color); }
+
+.date-location {
+  padding: 20px 0 40px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.date-location span {
+  padding: 10px 2%;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.date-location .date {
+  border-right: none;
+}
+
+.date-location span {
+  padding: 10px;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.slide-down-button {
+  text-indent: -9999px;
+  background-color: #fff;
+  padding: 12px 21px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.slide-down-button::before {
+  content: '\f175';
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+  color: var(--header-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* banner section ended here */
 
 
 
