@@ -1,3 +1,6 @@
+<?php
+
+?>
 <section class="banner">
   <div class="wrapper">
     <video class="banner-video" autoplay muted loop>
