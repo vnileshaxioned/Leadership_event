@@ -1,7 +1,7 @@
 <section class="banner">
   <div class="wrapper">
     <video class="banner-video" autoplay muted loop>
-      <source src="assets/videos/pexels-pavel-danilyuk-8716790.mp4" type="video/mp4">
+      <source src="<?php echo get_template_directory_uri().'/assets/videos/pexels-pavel-danilyuk-8716790.mp4'; ?>" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="banner-content">

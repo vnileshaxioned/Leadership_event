@@ -7,7 +7,7 @@
       </li>
       <li class="speaker-content">
         <figure>
-          <img src="assets/images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg" alt="Asian Man">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg'; ?>" alt="Asian Man" />
           <figcaption>Featured</figcaption>
         </figure>
         <ul class="speaker-inner-content">
@@ -34,7 +34,7 @@
     <ul class="speaker-bottom-container">
       <li class="speaker-image-list">
         <figure class="speaker-imge">
-          <img src="assets/images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg" alt="Asian Woman">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg'; ?>" alt="Asian Woman" />
         </figure>
         <ul class="speaker-inner-content">
           <li class="speaker-content-list">
@@ -55,7 +55,7 @@
       </li>
       <li class="speaker-image-list">
         <figure class="speaker-imge">
-          <img src="assets/images/avatar/senior-man-white-sweater-eyeglasses.jpg" alt="Senior Man">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/senior-man-white-sweater-eyeglasses.jpg'; ?>" alt="Senior Man" />
         </figure>
         <ul class="speaker-inner-content">
           <li class="speaker-content-list">
@@ -76,7 +76,7 @@
       </li>
       <li class="speaker-image-list">
         <figure class="speaker-imge">
-          <img src="assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg" alt="Pretty Smiling Joyfully Female">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg'; ?>" alt="Pretty Smiling Joyfully Female" />
         </figure>
         <ul class="speaker-inner-content">
           <li class="speaker-content-list">
@@ -100,7 +100,7 @@
       </li>
       <li class="speaker-image-list">
         <figure class="speaker-imge">
-          <img src="assets/images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg" alt="Happy African American Woman">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg'; ?>" alt="Happy African American Woman" />
         </figure>
         <ul class="speaker-inner-content">
           <li class="speaker-content-list">

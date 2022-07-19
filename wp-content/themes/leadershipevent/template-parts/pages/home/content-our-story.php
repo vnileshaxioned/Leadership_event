@@ -19,22 +19,22 @@
         <ul class="people-container">
           <li class="people-list">
             <figure class="people-image">
-              <img src="assets/images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg" alt="Asian Woman">
+              <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg'; ?>" alt="Asian Woman" />
             </figure>
           </li>
           <li class="people-list">
             <figure class="people-image">
-              <img src="assets/images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg" alt="Asian Man">
+              <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg'; ?>" alt="Asian Man" />
             </figure>
           </li>
           <li class="people-list">
             <figure class="people-image">
-              <img src="assets/images/avatar/senior-man-white-sweater-eyeglasses.jpg" alt="Senior Man">
+              <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/senior-man-white-sweater-eyeglasses.jpg'; ?>" alt="Senior Man" />
             </figure>
           </li>
           <li class="people-list">
             <figure class="people-image">
-              <img src="assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg" alt="Joyfully Female">
+              <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg'; ?>" alt="Joyfully Female" />
             </figure>
           </li>
           <li class="people-list">

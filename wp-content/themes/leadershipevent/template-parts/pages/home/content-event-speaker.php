@@ -1,4 +1,4 @@
-<section class="event-speaker" style="background-image: url('assets/images/terren-hurst-blgOFmPIlr0-unsplash.jpg');">
+<section class="event-speaker" style="background-image: url('<?php echo get_template_directory_uri().'/assets/images/terren-hurst-blgOFmPIlr0-unsplash.jpg'; ?>');">
   <div class="wrapper">
     <ul class="event-speaker-content">
       <li class="left-speaker-content">

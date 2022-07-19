@@ -22,7 +22,7 @@
     <ul class="schedule-post">
       <li class="schedule-post-list">
         <figure class="schedule-image">
-          <img src="assets/images/schedule/people-smiling-while-conference-room.jpg" alt="People Smiling">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/schedule/people-smiling-while-conference-room.jpg'; ?>" alt="People Smiling" />
         </figure>
         <div class="schedule-post-content">
           <h5 class="medium-content-heading">Building a famous company</h5>
@@ -30,7 +30,7 @@
           <ul class="schedule-info">
             <li class="schedule-info-list">
               <figure class="schedule-info-image">
-                <img src="assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg" alt="Smiling Joyfully Female">
+                <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg'; ?>" alt="Smiling Joyfully Female" />
               </figure>
               <div class="schedule-content">
                 <h6 class="schedule-content-heading">Isabella</h6>
@@ -48,7 +48,7 @@
       </li>
       <li class="schedule-post-list">
         <figure class="schedule-image">
-          <img src="assets/images/schedule/jason-goodman-bzqU01v-G54-unsplash.jpg" alt="Jason Goodman">
+          <img src="<?php echo get_template_directory_uri().'/assets/images/schedule/jason-goodman-bzqU01v-G54-unsplash.jpg'; ?>" alt="Jason Goodman" />
         </figure>
         <div class="schedule-post-content">
           <h5 class="medium-content-heading">Dev Ops life in corporate</h5>
@@ -56,7 +56,7 @@
           <ul class="schedule-info">
             <li class="schedule-info-list">
               <figure class="schedule-info-image">
-                <img src="assets/images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg" alt="Asian woman">
+                <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg'; ?>" alt="Asian woman" />
               </figure>
               <div class="schedule-content">
                 <h6 class="schedule-content-heading">Samantha</h6>
