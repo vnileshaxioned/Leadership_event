@@ -116,3 +116,116 @@ li {
   width: 79.4%; 
   margin: 0 auto;
 }
+
+:root {
+  --header-color: #272F53;
+  --heading-color: #04D2EA;
+  --paragraph-color: #847F83;
+  --border-color: #d1d1d1;
+  --header-ticket: #2F70FE;
+}
+
+@font-face {
+  font-family: 'leadership-font';
+  src: url("../fonts/overpass-regular.woff") format('woff'),
+      url("../fonts/overpass-regular.woff2") format('woff2');
+  font-display: swap;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+header { background-color: var(--header-color); }
+
+header .wrapper {
+  display: flex;
+  padding: 16px 0;
+  font-family: 'leadership-font';
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  flex-basis: 10%;
+}
+
+.main-logo {
+  display: flex;
+  color: var(--heading-color);
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.main-logo::before {
+  content: '\f140';
+  font-family: 'FontAwesome';
+  float: left;
+  font-size: 36px;
+  margin-right: 4%;
+}
+
+header nav {
+  flex-basis: 73%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu-list {
+  margin-left: 4%;
+}
+
+.menu-item {
+  color: #fff;
+  font-size: 13px;
+  font-family: 'leadership-font' !important;
+  font-weight: 600;
+}
+
+.menu-list:last-child { flex-basis: 15%; }
+
+.buy-ticket-button {
+  padding: 12px 20%;
+  background-color: var(--header-ticket);
+  border-radius: 30px;
+}
+/*=================================
+  Header styling ends here
+=================================*/
+
+/*=================================
+  main styling starts here
+=================================*/
+
+
+
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+
+
+
+
+
+
+ /*=================================
+  footer styling ends here
+=================================*/ 
+
+/*media query starts*/
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+
+
+
+}  
