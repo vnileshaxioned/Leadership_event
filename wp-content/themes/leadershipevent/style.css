@@ -125,49 +125,39 @@ li {
   --header-ticket: #2F70FE;
 }
 
-@font-face {
-  font-family: 'leadership-font';
-  src: url("../fonts/overpass-regular.woff") format('woff'),
-      url("../fonts/overpass-regular.woff2") format('woff2');
-  font-display: swap;
-}
+body { font-family: sans-serif; }
 /*=================================
   Header styling starts here
 =================================*/
 header { background-color: var(--header-color); }
 
 header .wrapper {
+  padding: 12px 0;
   display: flex;
-  padding: 16px 0;
-  font-family: 'leadership-font';
   align-items: center;
   justify-content: space-between;
 }
 
-h1 {
-  flex-basis: 10%;
-}
+h1 { flex-basis: 10%; }
 
 .main-logo {
   display: flex;
   color: var(--heading-color);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   align-items: center;
   text-transform: uppercase;
 }
 
 .main-logo::before {
   content: '\f140';
+  margin-right: 4%;
+  font-size: 36px;
   font-family: 'FontAwesome';
   float: left;
-  font-size: 36px;
-  margin-right: 4%;
 }
 
-header nav {
-  flex-basis: 73%;
-}
+header nav { flex-basis: 74%; }
 
 .navbar {
   display: flex;
@@ -175,21 +165,18 @@ header nav {
   justify-content: flex-end;
 }
 
-.menu-list {
-  margin-left: 4%;
-}
+.menu-list { margin-left: 4.4%; }
 
 .menu-item {
   color: #fff;
-  font-size: 13px;
-  font-family: 'leadership-font' !important;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.menu-list:last-child { flex-basis: 15%; }
+.menu-list:last-child { flex-basis: 14.7%; }
 
 .buy-ticket-button {
-  padding: 12px 20%;
+  padding: 10px 14%;
   background-color: var(--header-ticket);
   border-radius: 30px;
 }
@@ -208,48 +195,49 @@ header nav {
 
 .banner-video {
   width: 100%;
-  max-height: 100%;
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   object-fit: cover;
-  z-index: -1;
 }
 
 .banner .wrapper::before {
+  width: 100%;
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
-  right: 0;
   background-image: linear-gradient(0, var(--header-color), transparent);
 }
 
 .banner-content {
   width: 65%;
-  text-align: center;
   padding: 90px 0 150px;
   margin: 0 auto;
+  text-align: center;
   transform: translate(0);
 }
 
 .banner-heading {
-  margin-top: 98px;
-  font-size: 56px;
-  font-weight: 900;
+  margin-top: 82px;
   color: #fff;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
-.banner-heading .heading-color { text-decoration: underline; }
-.heading-color { color: var(--heading-color); }
+.heading-color {
+  color: var(--heading-color);
+  text-decoration: underline;
+}
 
 .date-location {
   padding: 20px 0 40px;
   display: flex;
-  justify-content: center;
   font-size: 14px;
+  justify-content: center;
 }
 
 .date-location span {
@@ -258,9 +246,7 @@ header nav {
   color: #fff;
 }
 
-.date-location .date {
-  border-right: none;
-}
+.date-location .date { border-right: none; }
 
 .date-location span {
   padding: 10px;
@@ -269,22 +255,22 @@ header nav {
 }
 
 .slide-down-button {
-  text-indent: -9999px;
-  background-color: #fff;
-  padding: 12px 21px;
-  border-radius: 50%;
+  padding: 10px 20px;
   position: relative;
+  background-color: #fff;
+  text-indent: -9999px;
+  border-radius: 50%;
 }
 
 .slide-down-button::before {
   content: '\f175';
-  font-family: 'FontAwesome';
-  float: right;
-  text-indent: 0;
-  color: var(--header-color);
   position: absolute;
   top: 50%;
   left: 50%;
+  color: var(--header-color);
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
   transform: translate(-50%, -50%);
 }
 /* banner section ended here */
@@ -293,7 +279,7 @@ header nav {
 .highlight { background-color: var(--header-color); }
 
 .highlight-container {
-  padding: 20px 0 32px;
+  padding: 20px 0 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -305,16 +291,26 @@ header nav {
 }
 
 .highlight-heading {
+  width: 100%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  transform: translatey(-50%);
 }
 
 .highlight-link {
   color: #fff;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 900;
+}
+
+.highlight-image::before {
+  width: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #0000008a;
 }
 /* highlight section ended here */
 
@@ -326,8 +322,6 @@ header nav {
   font-weight: 700;
   text-transform: capitalize;
 }
-
-.heading-color { text-decoration: underline; }
 
 .story-content {
   padding-bottom: 140px;
@@ -765,7 +759,7 @@ header nav {
 
 .contact-content {
   width: 52.5%;
-  padding: 94px 0;
+  padding: 86px 0;
   margin: 0 auto;
   border-radius: 20px;
 }
@@ -835,12 +829,83 @@ header nav {
 /*=================================
   footer styling starts here
 =================================*/ 
+.top-footer {
+  padding: 26px 0 43px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  flex-basis: 40%;
+  justify-content: flex-end;
+}
 
+.footer-social-list { margin-left: 8%; }
 
+.footer-icon {
+  color: #000;
+  text-indent: -9999px;
+}
 
+.footer-icon::before {
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+}
 
+.footer-social-list:nth-child(1) .footer-icon::before { content: '\f09a'; }
+.footer-social-list:nth-child(2) .footer-icon::before { content: '\f16d'; }
+.footer-social-list:nth-child(3) .footer-icon::before { content: '\f232'; }
+.footer-social-list:nth-child(4) .footer-icon::before { content: '\f167'; }
 
+.bottom-footer {
+  padding: 38px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-footer nav { flex-basis: 61%; }
+
+.footer-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.footer-menu-list { margin-right: 3%; }
+.bottom-footer-content { flex-basis: 26%; }
+.bottom-footer-content .paragraph:first-child { margin-bottom: 18px; }
+.bottom-footer-content .paragraph { font-size: 12px; }
+.credit { color: var(--paragraph-color); }
+
+.footer-menu {
+  color: var(--paragraph-color);
+  font-size: 12px;
+}
+
+.go-to-top {
+  flex-basis: 13.5%;
+  text-align: center;
+}
+
+.top-button {
+  padding: 10px 17px;
+  background: #F1F6FD;
+  color: #000;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+
+.top-button::before {
+  content: '\f176';
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+}
 
  /*=================================
   footer styling ends here
