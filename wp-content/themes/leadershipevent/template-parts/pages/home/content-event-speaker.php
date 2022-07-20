@@ -1,13 +1,27 @@
-<section class="event-speaker" style="background-image: url('<?php echo get_template_directory_uri().'/assets/images/terren-hurst-blgOFmPIlr0-unsplash.jpg'; ?>');">
-  <div class="wrapper">
-    <ul class="event-speaker-content">
-      <li class="left-speaker-content">
-        <h4 class="section-heading">Become an <span class="heading-color">event speaker?</span></h4>
-        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
-      </li>
-      <li class="right-speaker-content">
-        <a href="#FIXME" class="event-register-button" title="Register today">Register today</a>
-      </li>
-    </ul>
-  </div>
-</section>
+<?php
+  $background_image = get_sub_field('background_image');
+  $section_content = get_sub_field('section_content');
+  $register_cta = get_sub_field('register_cta');
+  $background_image_url = $background_image['url'];
+
+  if ($background_image || $section_content || $register_cta) { ?>
+  <section class="event-speaker" <?php echo $background_image_url ? 'style="background-image: url('.$background_image_url.');"' : null; ?> >
+    <div class="wrapper">
+      <?php if ($section_content || $register_cta) { ?>
+        <ul class="event-speaker-content">
+          <?php
+            echo $section_content ? '<li class="left-speaker-content">'.$section_content.'</li>' : null;
+
+            if ($register_cta) {
+              $register_title = $register_cta['title'];
+              $register_url = $register_cta['url'];
+              ?>
+            <li class="right-speaker-content">
+              <a href="<?php echo $register_url; ?>" class="event-register-button" title="<?php echo $register_title; ?>"><?php echo $register_title; ?></a>
+            </li>
+          <?php } ?>
+        </ul>
+      <?php } ?>
+    </div>
+  </section>
+<?php } ?>
