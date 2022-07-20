@@ -1,37 +1,30 @@
 <?php
+  $contents = get_sub_field('highlight_contents');
 
-$contents = get_sub_field('highlight_content');
+  if ($contents) { ?>
+  <section class="highlight">
+    <div class="wrapper">
+      <ul class="highlight-container">
+        <?php
+          foreach ($contents as $content) {
+            $title = $content['title'];
+            $image_url = $content['image']['url'] ? $content['image']['url'] : null;
+            $image_alt = $content['image']['alt'] ? $content['image']['alt'] : $title;
+            $video_url = $content['video']['url'] ? $content['video']['url'] : null;
+            $video_mime_type = $content['video']['mime_type'];
 
-print_r($contents);
-
-?>
-<section class="highlight">
-  <div class="wrapper">
-    <ul class="highlight-container">
-      <li class="highlight-list">
-        <figure class="highlight-image">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/highlight/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg'; ?>" alt="Alexandre Pellaes" />
-        </figure>
-        <h3 class="highlight-heading">
-          <a href="#FIXME" class="highlight-link">2019 Highlights</a>
-        </h3>
-      </li>
-      <li class="highlight-list">
-        <figure class="highlight-image">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/highlight/miguel-henriques--8atMWER8bI-unsplash.jpg'; ?>" alt="Miguel Henriques" />
-        </figure>
-        <h3 class="highlight-heading">
-          <a href="#FIXME" class="highlight-link">2020 Highlights</a>
-        </h3>
-      </li>
-      <li class="highlight-list">
-        <figure class="highlight-image">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/highlight/jakob-dalbjorn-cuKJre3nyYc-unsplash.jpg'; ?>" alt="Jakob Dalbjorn" />
-        </figure>
-        <h3 class="highlight-heading">
-          <a href="#FIXME" class="highlight-link">2021 Highlights</a>
-        </h3>
-      </li>
-    </ul>
-  </div>
-</section>
+            if ($title || $image_url || $video_url) { ?>
+          <li class="highlight-list">
+            <?php if ($image_url) { ?>
+              <figure class="highlight-image">
+                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+              </figure>
+            <?php } 
+              echo $title ? '<h3 class="highlight-heading"><a href="#FIXME" class="highlight-link">'.$title.'</a></h3>' : null; ?>
+          </li>
+        <?php }
+          } ?>
+      </ul>
+    </div>
+  </section>
+<?php } ?>
