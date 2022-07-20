@@ -4,9 +4,6 @@
   $right_content = get_sub_field('right_content');
   $speaker_image = get_sub_field('speaker_image');
   $tag_line = get_sub_field('tag_line');
-  // echo "<pre>";
-  // var_dump($image_url);
-  // echo "</pre>";
 
   if ($title || $left_content || $right_content || $speaker_image || $tag_line) { ?>
   <section class="our-story">

@@ -20,7 +20,7 @@
         case 'our_story_section';
           get_template_part('template-parts/pages/home/content', 'our-story');
           break;
-        case 'our_speaker_section';
+        case 'our_speakers_section';
           get_template_part('template-parts/pages/home/content', 'our-speaker');
           break;
         case 'next_schedule_section';
