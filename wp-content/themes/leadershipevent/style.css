@@ -436,14 +436,17 @@ header nav { flex-basis: 74%; }
 }
 
 .speaker-inner-content {
+  width: 89%;
   padding: 10px 12px 10px 8px;
+  display: flex;
   position: absolute;
   bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
-  width: 89%;
   border-left: 4px solid var(--heading-color);
+  background: linear-gradient(to left, #fff 50%, var(--heading-color) 50%) right;
+  background-size: 200%;
+  transition: all .5s ease;
 }
 
 .speaker-content-heading {
@@ -458,6 +461,53 @@ header nav { flex-basis: 74%; }
   color: var(--paragraph-color);
   line-height: 1.6;
 }
+
+.speaker-content-list:last-child {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all .3s ease;
+  transition-delay: .5s;
+}
+
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.social-icon-list {
+  margin-left: 10px;
+  position: relative;
+}
+
+.social-icon {
+  padding: 4px 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  text-indent: -9999px;
+  transition: all .3s ease;
+}
+
+.social-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+}
+
+.facebook::before { content: '\f09a'; }
+.instagram::before { content: '\f16d'; }
+.google::before { content: '\f0d5'; }
+.whatsapp::before { content: '\f232'; }
 
 .speaker-bottom-container {
   padding: 20px 0 94px;
@@ -912,9 +962,30 @@ header nav { flex-basis: 74%; }
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
+/*media query for hover starts here*/
+@media only screen and (min-width: 995px) {
+  .speaker-image-list:hover .speaker-inner-content,
+  .speaker-content:last-child:hover .speaker-inner-content {
+    background-position: left;
+  }
 
+  .speaker-image-list:hover .speaker-content-list:last-child,
+  .speaker-content:last-child:hover .speaker-content-list:last-child {
+    opacity: 1;
+  }
+
+  .speaker-image-list:hover .speaker-content-heading,
+  .speaker-image-list:hover .speaker-position,
+  .speaker-content:last-child:hover .speaker-content-heading,
+  .speaker-content:last-child:hover .speaker-position {
+    color: #fff;
+  }
+
+  .social-icon:hover {
+    color: #fff;
+    background-color: transparent;
+  }
+  
 
 
 }  
