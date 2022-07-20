@@ -1,127 +1,107 @@
-<section class="our-speaker">
-  <div class="wrapper">
-    <ul class="speaker-top-container">
-      <li class="speaker-content">
-        <h4 class="section-heading">Our <span class="heading-color">speakers</span></h4>
-        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore</p>
-      </li>
-      <li class="speaker-content">
-        <figure>
-          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/happy-asian-man-standing-with-arms-crossed-grey-wall.jpg'; ?>" alt="Asian Man" />
-          <figcaption>Featured</figcaption>
-        </figure>
-        <ul class="speaker-inner-content">
-          <li class="speaker-content-list">
-            <h5 class="speaker-content-heading">Logan wilson</h5>
-            <p class="speaker-position">CEO / founder</p>
+<?php
+  $section_content = get_sub_field('section_content');
+  $add_speaker = get_sub_field('add_speaker');
+  
+  if ($section_content || $add_speaker) { ?>
+  <section class="our-speaker">
+    <div class="wrapper">
+      <ul class="speaker-top-container">
+        <?php echo $section_content ? '<li class="speaker-content">'.$section_content.'</li>' : null; 
+        
+        if ($add_speaker) {
+          $name = $add_speaker[0]['name'];
+          $position = $add_speaker[0]['position'];
+          $social_links = $add_speaker[0]['social_links'];
+          $image_url = $add_speaker[0]['image']['url'] ? $add_speaker[0]['image']['url'] : null;
+          $image_alt = $add_speaker[0]['image']['alt'] ? $add_speaker[0]['image']['alt'] : null;
+          
+          if ($name || $position || $image_url || $social_links) { ?>
+          <li class="speaker-content">
+            <?php if ($image_url) { ?>
+              <figure>
+                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+                <figcaption>Featured</figcaption>
+              </figure>
+            <?php } 
+              if ($name || $position || $social_links) { ?>
+              <ul class="speaker-inner-content">
+                <?php if ($name || $position) { ?>
+                  <li class="speaker-content-list">
+                    <?php
+                      echo $name ? '<h5 class="speaker-content-heading">'.$name.'</h5>' : null;
+                      echo $position ? '<p class="speaker-position">'.$position.'</p>' : null;
+                    ?>
+                  </li>
+                <?php }
+                  if ($social_links) { ?>
+                  <li class="speaker-content-list">
+                    <ul class="social-links">
+                      <?php
+                        foreach ($social_links as $social_link) {
+                          $social_app_name = $social_link['social_app_name'];
+                          $social_url = $social_link['social_url'];?>
+                        <li class="social-icon-list">
+                          <a href="<?php echo $social_url; ?>" class="social-icon <?php echo strtolower($social_app_name); ?>" target="_blank" title="<?php echo ucfirst($social_app_name); ?>"><?php echo ucfirst($social_app_name); ?></a>
+                        </li>
+                      <?php } ?>
+                    </ul>
+                  </li>
+                <?php } ?>
+              </ul>
+            <?php } ?>
           </li>
-          <li class="speaker-content-list">
-            <ul class="social-links">
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon facebook" target="_blank" title="Facebook">Facebook</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon instagram" target="_blank" title="Instagram">Instagram</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon google" target="_blank" title="Google">Google</a>
-              </li>
-            </ul>
-          </li>
+        <?php }
+          } ?>
+      </ul>
+      <?php if ($add_speaker) { ?>
+        <ul class="speaker-bottom-container">
+          <?php
+            array_shift($add_speaker);
+            foreach ($add_speaker as $speakers) {
+              $name = $speakers['name'];
+              $position = $speakers['position'];
+              $social_links = $speakers['social_links'];
+              $image_url = $speakers['image']['url'] ? $speakers['image']['url'] : null;
+              $image_alt = $speakers['image']['alt'] ? $speakers['image']['alt'] : null;
+              
+              if ($name || $position || $image_url || $social_links) { ?>
+            <li class="speaker-image-list">
+              <?php if ($image_url) { ?>
+                <figure class="speaker-imge">
+                  <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+                </figure>
+              <?php }
+                if ($name || $position || $social_links) { ?>
+                <ul class="speaker-inner-content">
+                  <?php if ($name || $position) { ?>
+                    <li class="speaker-content-list">
+                      <?php
+                        echo $name ? '<h5 class="speaker-content-heading">'.$name.'</h5>' : null;
+                        echo $position ? '<p class="speaker-position">'.$position.'</p>' : null;
+                      ?>
+                    </li>
+                  <?php } 
+                    if ($social_links) { ?>
+                    <li class="speaker-content-list">
+                      <ul class="social-links">
+                        <?php
+                          foreach ($social_links as $social_link) {
+                            $social_app_name = $social_link['social_app_name'];
+                            $social_url = $social_link['social_url'];?>
+                          <li class="social-icon-list">
+                            <a href="<?php echo $social_url; ?>" class="social-icon <?php echo strtolower($social_app_name); ?>" target="_blank" title="<?php echo ucfirst($social_app_name); ?>"><?php echo ucfirst($social_app_name); ?></a>
+                          </li>
+                        <?php } ?>
+                      </ul>
+                    </li>
+                  <?php } ?>
+                </ul>
+              <?php } ?>
+            </li>
+          <?php }
+            } ?>
         </ul>
-      </li>
-    </ul>
-    <ul class="speaker-bottom-container">
-      <li class="speaker-image-list">
-        <figure class="speaker-imge">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/portrait-good-looking-brunette-young-asian-woman.jpg'; ?>" alt="Asian Woman" />
-        </figure>
-        <ul class="speaker-inner-content">
-          <li class="speaker-content-list">
-            <h5 class="speaker-content-heading">Natalie</h5>
-            <p class="speaker-position">Event planner</p>
-          </li>
-          <li class="speaker-content-list">
-            <ul class="social-links">
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon facebook" target="_blank" title="Facebook">Facebook</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon instagram" target="_blank" title="Instagram">Instagram</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="speaker-image-list">
-        <figure class="speaker-imge">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/senior-man-white-sweater-eyeglasses.jpg'; ?>" alt="Senior Man" />
-        </figure>
-        <ul class="speaker-inner-content">
-          <li class="speaker-content-list">
-            <h5 class="speaker-content-heading">Thomas</h5>
-            <p class="speaker-position">Startup coach</p>
-          </li>
-          <li class="speaker-content-list">
-            <ul class="social-links">
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon instagram" target="_blank" title="Instagram">Instagram</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon whatsapp" target="_blank" title="Whatsapp">Whatsapp</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="speaker-image-list">
-        <figure class="speaker-imge">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg'; ?>" alt="Pretty Smiling Joyfully Female" />
-        </figure>
-        <ul class="speaker-inner-content">
-          <li class="speaker-content-list">
-            <h5 class="speaker-content-heading">Isabella</h5>
-            <p class="speaker-position">Event manager</p>
-          </li>
-          <li class="speaker-content-list">
-            <ul class="social-links">
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon facebook" target="_blank" title="Facebook">Facebook</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon instagram" target="_blank" title="Instagram">Instagram</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon whatsapp" target="_blank" title="Whatsapp">Whatsapp</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="speaker-image-list">
-        <figure class="speaker-imge">
-          <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg'; ?>" alt="Happy African American Woman" />
-        </figure>
-        <ul class="speaker-inner-content">
-          <li class="speaker-content-list">
-            <h5 class="speaker-content-heading">Samantha</h5>
-            <p class="speaker-position">Top level speaker</p>
-          </li>
-          <li class="speaker-content-list">
-            <ul class="social-links">
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon facebook" target="_blank" title="Facebook">Facebook</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon instagram" target="_blank" title="Instagram">Instagram</a>
-              </li>
-              <li class="social-icon-list">
-                <a href="#FIXME" class="social-icon whatsapp" target="_blank" title="Whatsapp">Whatsapp</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
+      <?php } ?>
+    </div>
+  </section>
+<?php } ?>
