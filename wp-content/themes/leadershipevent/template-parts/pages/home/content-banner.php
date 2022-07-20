@@ -1,21 +1,37 @@
 <?php
+  $banner_content = get_field('banner_content');
+  $title = $banner_content['title'];
+  $event_location = $banner_content['event_location'];
+  $video_url = $banner_content['video']['url'];
+  $video_mime_type = $banner_content['video']['mime_type'];
+  $event_date_from = DateTime::createFromFormat('Ymd', $banner_content['event_date_from'])->format('F j');
+  $event_date_to = DateTime::createFromFormat('Ymd', $banner_content['event_date_to'])->format('j, Y');
 
-?>
-<section class="banner">
-  <div class="wrapper">
-    <video class="banner-video" autoplay muted loop>
-      <source src="<?php echo get_template_directory_uri().'/assets/videos/pexels-pavel-danilyuk-8716790.mp4'; ?>" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="banner-content">
-      <h2 class="banner-heading"><span class="heading-color">Leadership</span> Conference 2022</h2>
-      <div class="date-location">
-        <span class="date">July 12 to 18, 2022</span>
-        <span class="location">Times Square, NY</span>
-      </div>
-      <div class="slide-down">
-        <a href="#FIXME" class="slide-down-button" title="Slide down">Slide down</a>
-      </div>
+  if ($title || $event_date_from || $event_date_to || $event_location || $video_url) { ?>
+  <section class="banner">
+    <div class="wrapper">
+      <?php if ($video_url) { ?>
+        <video class="banner-video" autoplay muted loop>
+          <source src="<?php echo $video_url; ?>" type="<?php echo $video_mime_type; ?>">
+          Your browser does not support the video tag.
+        </video>
+      <?php } 
+        if ($title || $event_date_from || $event_date_to || $event_location) { ?>
+        <div class="banner-content">
+          <?php echo $title ? $title : null; 
+            if ($event_date_from || $event_date_to || $event_location) { ?>
+            <div class="date-location">
+              <?php
+                echo ($event_date_from && $event_date_to) ? '<span class="date">'.$event_date_from.' to '.$event_date_to.'</span>': null;
+                echo $event_location ? '<span class="location">'.$event_location.'</span>' : null;
+              ?>
+            </div>
+          <?php } ?>
+          <div class="slide-down">
+            <a href="#FIXME" class="slide-down-button" title="Slide down">Slide down</a>
+          </div>
+        </div>
+      <?php } ?>
     </div>
-  </div>
-</section>
+  </section>
+<?php } ?>
