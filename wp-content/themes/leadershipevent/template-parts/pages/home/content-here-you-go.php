@@ -6,33 +6,48 @@
   $email_id = get_sub_field('email_id');
   $phone_number = get_sub_field('phone_number');
 
-  if ($title || $tickets) { ?>
+  if ($title || $location || $location_title || $address || $email_id || $phone_number) { ?>
   <section class="here-you-go">
     <div class="wrapper">
-      <h4 class="section-heading">Here you go <span class="heading-color">venue</span></h4>
-      <ul class="venue-content">
-        <li class="venue-list">
-          <figure class="map-location">
-            <img src="https://dummyimage.com/500x294/000/fff.jpg" alt="Google Map">
-          </figure>
-        </li>
-        <li class="venue-list">
-          <ul class="venu-right-content">
-            <li class="venu-contact-head">
-              <h5 class="contact-heading">Times square</h5>
+      <?php 
+        echo $title ? '<h4 class="section-heading">'.$title.'</h4>' : null;
+          if ($location || $location_title || $address || $email_id || $phone_number) { ?>
+        <ul class="venue-content">
+          <?php //if ($location) { ?>
+            <li class="venue-list">
+              <figure class="map-location">
+                <img src="https://dummyimage.com/500x294/000/fff.jpg" alt="Google Map">
+              </figure>
             </li>
-            <li class="venu-contact-list">
-              <span class="venue-address">102 South. 7th Street, New York, NY 10036, USA</span>
+          <?php //}
+            if ($location_title || $address || $email_id || $phone_number) { ?>
+            <li class="venue-list">
+              <ul class="venu-right-content">
+                <?php if ($location_title) { ?>
+                  <li class="venu-contact-head">
+                    <?php echo $location_title ? '<h5 class="contact-heading">'.$location_title.'</h5>' : null; ?>
+                  </li>
+                <?php }
+                  if ($address) { ?>
+                  <li class="venu-contact-list">
+                    <?php echo $address ? '<span class="venue-address">'.$address.'</span>' : null; ?>
+                  </li>
+                <?php }
+                  if ($email_id) { ?>
+                  <li class="venu-contact-list">
+                    <?php echo $email_id ? '<a href="mailto:'.$email_id.'" class="venue-link venue-mail" title="'.$email_id.'">'.$email_id.'</a>' : null; ?>
+                  </li>
+                <?php }
+                  if ($phone_number) { ?>
+                  <li class="venu-contact-list">
+                    <?php echo $phone_number ? '<a href="tel:'.$phone_number.'" class="venue-link venue-tel" title="'.$phone_number.'">'.$phone_number.'</a>' : null; ?>
+                  </li>
+                <?php } ?>
+              </ul>
             </li>
-            <li class="venu-contact-list">
-              <a href="mailto:hi@company.com" class="venue-link venue-mail" title="hi@company.com">hi@company.com</a>
-            </li>
-            <li class="venu-contact-list">
-              <a href="tel:010-020-0340" class="venue-link venue-tel" title="010-020-0340">010-020-0340</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+          <?php } ?>
+        </ul>
+      <?php } ?>
     </div>
   </section>
 <?php } ?>
