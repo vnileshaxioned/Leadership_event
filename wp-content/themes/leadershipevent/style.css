@@ -188,24 +188,24 @@ h1 { flex-basis: 10%; }
   float: left;
 }
 
-header nav { flex-basis: 74%; }
+.navbar { flex-basis: 74%; }
 
-.navbar {
+.navbar ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.menu-list { margin-left: 4.4%; }
+.page_item { margin-left: 4.4%; }
 
-.menu-item {
+.page_item a {
   color: #fff;
   font-size: 12px;
   font-weight: 700;
   transition: all .3s ease;
 }
 
-.menu-list:last-child { flex-basis: 14.7%; }
+.page_item:last-child { flex-basis: 14.7%; }
 
 .buy-ticket-button {
   padding: 10px 14%;
