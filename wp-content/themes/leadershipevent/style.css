@@ -117,15 +117,45 @@ li {
   margin: 0 auto;
 }
 
+/*=================================
+  Custom styling starts here
+=================================*/
 :root {
   --header-color: #272F53;
   --heading-color: #04D2EA;
   --paragraph-color: #847F83;
   --border-color: #d1d1d1;
   --header-ticket: #2F70FE;
+  --input-color: rgba(52, 116, 255, .5);
 }
 
 body { font-family: sans-serif; }
+
+.wysiwyg-editor h4 {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.wysiwyg-editor h5 {
+  font-size: 26px;
+  font-weight: 600;
+  padding: 18px 0 14px;
+  line-height: 1.3;
+}
+
+.wysiwyg-editor span { text-decoration: underline; }
+
+.wysiwyg-editor p,
+.paragraph {
+  color: #847F83;
+  font-size: 14px;
+  line-height: 1.5;
+}
+/*=================================
+  Custom styling ends here
+=================================*/
+
 /*=================================
   Header styling starts here
 =================================*/
@@ -171,6 +201,7 @@ header nav { flex-basis: 74%; }
   color: #fff;
   font-size: 12px;
   font-weight: 700;
+  transition: all .3s ease;
 }
 
 .menu-list:last-child { flex-basis: 14.7%; }
@@ -179,6 +210,7 @@ header nav { flex-basis: 74%; }
   padding: 10px 14%;
   background-color: var(--header-ticket);
   border-radius: 30px;
+  transition: all .3s ease;
 }
 /*=================================
   Header styling ends here
@@ -212,7 +244,7 @@ header nav { flex-basis: 74%; }
 }
 
 .banner-content {
-  width: 65%;
+  width: 60%;
   padding: 90px 0 150px;
   margin: 0 auto;
   text-align: center;
@@ -228,10 +260,7 @@ header nav { flex-basis: 74%; }
   text-transform: uppercase;
 }
 
-.heading-color {
-  color: var(--heading-color);
-  text-decoration: underline;
-}
+.heading-color { text-decoration: underline; }
 
 .date-location {
   padding: 20px 0 40px;
@@ -255,11 +284,13 @@ header nav { flex-basis: 74%; }
 }
 
 .slide-down-button {
-  padding: 10px 20px;
+  padding: 10px 19px;
   position: relative;
   background-color: #fff;
+  color: var(--header-color);
   text-indent: -9999px;
   border-radius: 50%;
+  transition: all .3s ease;
 }
 
 .slide-down-button::before {
@@ -267,7 +298,6 @@ header nav { flex-basis: 74%; }
   position: absolute;
   top: 50%;
   left: 50%;
-  color: var(--header-color);
   font-family: 'FontAwesome';
   float: right;
   text-indent: 0;
@@ -290,9 +320,13 @@ header nav { flex-basis: 74%; }
   flex-basis: 32%;
 }
 
+.highlight-image { overflow: hidden; }
+.highlight-image img { transition: all 1s ease; }
+
 .highlight-heading {
   width: 100%;
   position: absolute;
+  z-index: 2;
   top: 50%;
   text-align: center;
   transform: translatey(-50%);
@@ -304,24 +338,35 @@ header nav { flex-basis: 74%; }
   font-weight: 900;
 }
 
+.highlight-link::before {
+  content: '\f167';
+  padding: 10px;
+  border-radius: 14px;
+  display: none;
+  background-color: #fff;
+  color: #FF2017;
+  font-size: 34px;
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+}
+
 .highlight-image::before {
   width: 100%;
   content: '';
   position: absolute;
+  z-index: 1;
   top: 0;
   bottom: 0;
-  background-color: #0000008a;
+  background-color: rgba(0, 0, 0, .5);
 }
 /* highlight section ended here */
 
 /* our story section started here */
 .our-story .wrapper { padding-top: 96px; }
 
-.section-heading {
-  font-size: 38px;
-  font-weight: 700;
-  text-transform: capitalize;
-}
+.left-content-speaker h4 { margin: 0 16%; }
+.left-content-speaker p { margin: 26px 16% 16px; }
 
 .story-content {
   padding-bottom: 140px;
@@ -334,16 +379,10 @@ header nav { flex-basis: 74%; }
 .leadership-conference { flex-basis: 50%; }
 
 .content-heading {
+  padding: 18px 0 14px;
   font-size: 26px;
   font-weight: 600;
-  padding: 18px 0 14px;
   line-height: 1.3;
-}
-
-.paragraph {
-  font-size: 14px;
-  color: #847F83;
-  line-height: 1.4;
 }
 
 .action-container { margin-top: 28px; }
@@ -356,14 +395,16 @@ header nav { flex-basis: 74%; }
 }
 
 .action-speaker-button {
-  color: var(--heading-color);
   border: 2px solid var(--heading-color);
+  color: var(--heading-color);
+  transition: all .3s ease;
 }
 
 .action-schedule-button {
+  border: 2px solid var(--header-color);
   background-color: var(--header-color);
   color: #fff;
-  border: 2px solid var(--header-color);
+  transition: all .3s ease;
 }
 
 .medium-content-heading {
@@ -436,7 +477,7 @@ header nav { flex-basis: 74%; }
 }
 
 .speaker-inner-content {
-  width: 89%;
+  width: 95%;
   padding: 10px 12px 10px 8px;
   display: flex;
   position: absolute;
@@ -486,7 +527,7 @@ header nav { flex-basis: 74%; }
 }
 
 .social-icon {
-  padding: 4px 14px;
+  padding: 4px 13px;
   border-radius: 50%;
   background-color: #fff;
   color: #000;
@@ -521,13 +562,13 @@ header nav { flex-basis: 74%; }
   flex-basis: 23.5%;
 }
 
-.speaker-image-list .speaker-inner-content { width: 78%; }
+.speaker-image-list .speaker-inner-content { width: 90%; }
 /* our speaker section ended here */
 
 /* next schedule section started here */
-.next-schedules .section-heading {
+.next-schedules .wysiwyg-editor {
+  margin-top: 18px;
   text-align: center;
-  padding-top: 18px;
 }
 
 .schedule-tabs {
@@ -538,7 +579,9 @@ header nav { flex-basis: 74%; }
 
 .schedule-tab-list {
   padding: 16px 2.4% 24px;
+  border-left: 2px solid transparent;
   flex-basis: 30%;
+  transition: all .3s ease;
 }
 
 .schedule-tab-heading {
@@ -645,17 +688,18 @@ header nav { flex-basis: 74%; }
   align-items: center;
 }
 
-.left-speaker-content { flex-basis: 52%; }
+.left-speaker-content { flex-basis: 56%; }
 
-.left-speaker-content .section-heading {
+.left-speaker-content h4 {
   color: #fff;
   text-transform: none;
 }
 
-.left-speaker-content .paragraph {
+.left-speaker-content p {
   padding-bottom: 12px;
   margin-top: 24px;
   color: #fff;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -672,11 +716,12 @@ header nav { flex-basis: 74%; }
   color: #000;
   font-weight: 700;
   text-transform: capitalize;
+  transition: all .3s ease;
 }
 /* event speaker section ended here */
 
 /* get your ticket section started here */
-.get-your-tickets .section-heading {
+.get-your-tickets .wysiwyg-editor {
   padding-top: 40px;
   text-align: center;
 }
@@ -724,6 +769,7 @@ header nav { flex-basis: 74%; }
   font-size: 13px;
   font-weight: 700;
   text-transform: capitalize;
+  transition: all .3s ease;
 }
 
 .ticket-list:nth-child(3) .paragraph {
@@ -844,18 +890,22 @@ header nav { flex-basis: 74%; }
 .form-content {
   width: 86%;
   padding: 13px;
-  border: none;
+  border: 2px solid transparent;
+  border-radius: 6px;
   outline: none;
   background-color: #F1F8FF;
+  transition: all .3s ease;
 }
 
 .form-textarea textarea {
   width: 95.5%;
   padding: 13px;
   margin-top: 18px;
-  border: none;
+  border: 2px solid transparent;
+  border-radius: 6px;
   outline: none;
   background-color: #F1F8FF;
+  transition: all .3s ease;
 }
 
 .form-textarea:last-child { margin-top: 16px; }
@@ -870,6 +920,7 @@ header nav { flex-basis: 74%; }
   font-size: 14px;
   font-weight: 700;
   border-radius: 50px;
+  transition: all .3s ease;
 }
 /* contact form section ended here */
 /*=================================
@@ -964,6 +1015,29 @@ header nav { flex-basis: 74%; }
 /*media query starts*/
 /*media query for hover starts here*/
 @media only screen and (min-width: 995px) {
+  .menu-item:hover { color: var(--heading-color); }
+
+  .slide-down-button:hover,
+  .buy-ticket-button:hover {
+    background-color: var(--heading-color);
+    color: #fff;
+  }
+
+  .highlight-list:hover .highlight-image img { transform: scale(1.1) }
+  .highlight-list:hover .highlight-link { text-indent: -9999px; }
+  .highlight-list:hover .highlight-link::before { display: block; }
+
+  .event-register-button:hover,
+  .action-speaker-button:hover {
+    background-color: var(--heading-color);
+    color: #fff;
+  }
+
+  .action-schedule-button:hover {
+    border: 2px solid var(--heading-color);
+    background-color: var(--heading-color);
+  }
+
   .speaker-image-list:hover .speaker-inner-content,
   .speaker-content:last-child:hover .speaker-inner-content {
     background-position: left;
@@ -986,6 +1060,16 @@ header nav { flex-basis: 74%; }
     background-color: transparent;
   }
   
+  .schedule-tab-list:hover {
+    box-shadow: 0 20px 50px #a3a3a3;
+    border-left: 2px solid var(--heading-color);
+  }
 
+  .schedule-tab-list:hover .schedule-tab-heading { color: var(--heading-color); }
+  .contact-submit-button:hover { background-color: var(--header-color); }
 
+  .form-textarea textarea:focus,
+  .form-content:focus {
+    border: 2px solid var(--input-color);
+  }
 }  
