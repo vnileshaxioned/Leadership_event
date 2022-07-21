@@ -6,7 +6,7 @@
   <section class="our-speaker">
     <div class="wrapper">
       <ul class="speaker-top-container">
-        <?php echo $section_content ? '<li class="speaker-content left-speaker-content">'.$section_content.'</li>' : null; 
+        <?php echo $section_content ? '<li class="speaker-content left-content-speaker">'.$section_content.'</li>' : null; 
         
         if ($add_speaker) {
           $name = $add_speaker[0]['name'];
@@ -16,7 +16,7 @@
           $image_alt = $add_speaker[0]['image']['alt'] ? $add_speaker[0]['image']['alt'] : null;
           
           if ($name || $position || $image_url || $social_links) { ?>
-          <li class="speaker-content right-speaker-content">
+          <li class="speaker-content right-content-speaker">
             <?php if ($image_url) { ?>
               <figure>
                 <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
