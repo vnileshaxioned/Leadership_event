@@ -8,7 +8,7 @@
   if ($title || $left_content || $right_content || $speaker_image || $tag_line) { ?>
   <section class="our-story">
     <div class="wrapper">
-      <?php echo $title ? $title : null; ?>
+      <?php echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null; ?>
       <ul class="story-content">
         <?php if ($left_content) { ?>
           <li class="leadership-conference">
