@@ -4,7 +4,7 @@
   if ($title) { ?>
   <section class="next-schedules">
     <div class="wrapper">
-      <?php $title ? $title : null; ?>
+      <?php echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null; ?>
       <ul class="schedule-tabs">
         <li class="schedule-tab-list">
           <h5 class="schedule-tab-heading">Day one</h5>

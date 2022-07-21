@@ -6,7 +6,7 @@
   <section class="our-speaker">
     <div class="wrapper">
       <ul class="speaker-top-container">
-        <?php echo $section_content ? '<li class="speaker-content left-content-speaker">'.$section_content.'</li>' : null; 
+        <?php echo $section_content ? '<li class="speaker-content left-content-speaker"><div class="wysiwyg-editor">'.$section_content.'</div></li>' : null; 
         
         if ($add_speaker) {
           $name = $add_speaker[0]['name'];

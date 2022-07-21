@@ -6,7 +6,7 @@
   <section class="get-your-tickets">
     <div class="wrapper">
       <?php
-        echo $title ? $title : null;
+        echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null;
           if ($tickets) { ?>
         <ul class="ticket-content">
           <?php
