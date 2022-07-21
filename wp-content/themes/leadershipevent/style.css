@@ -196,18 +196,18 @@ nav { flex-basis: 74%; }
   justify-content: flex-end;
 }
 
-.menu_item { margin-left: 4.4%; }
+.menu-item { margin-left: 4.4%; }
 
-.menu_item a {
+.menu-item a {
   color: #fff;
   font-size: 12px;
   font-weight: 700;
   transition: all .3s ease;
 }
 
-.menu_item:last-child { flex-basis: 14.7%; }
+.menu-item:last-child { flex-basis: 14.7%; }
 
-.menu_item:last-child a {
+.menu-item:last-child a {
   padding: 10px 14%;
   background-color: var(--header-ticket);
   border-radius: 30px;
