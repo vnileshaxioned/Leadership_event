@@ -11,35 +11,17 @@
     <!--header section start-->
     <header>
       <div class="wrapper">
-        <h1><a href="/index.html" class="main-logo" title="Leadership event">Leadership event</a></h1>
-        <nav>
-          <ul class="navbar">
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="Home">Home</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="About">About</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="Speakers">Speakers</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="Schedules">Schedules</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="Pricing">Pricing</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="Venue">Venue</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item" title="Contact">Contact</a>
-            </li>
-            <li class="menu-list">
-              <a href="#FIXME" class="menu-item buy-ticket-button" title="Buy tickets">Buy tickets</a>
-            </li>
-          </ul>
-        </nav>
+        <?php
+          $blog_name = get_bloginfo('name');
+          $blog_url = get_bloginfo('url');
+        ?>
+        <h1><a href="<?php echo $blog_url; ?>" class="main-logo" title="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h1>
+        <?php wp_nav_menu( array(
+          'theme_location' => 'primary',
+          'menu_class' => 'navbar',
+          'container' => 'nav',
+          'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+        ) ); ?>
       </div>
     </header>
     <!--header section start-->
