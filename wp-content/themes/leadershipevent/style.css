@@ -794,7 +794,7 @@ header nav { flex-basis: 74%; }
 .ticket-list:nth-child(3) .paragraph { padding-bottom: 28px; }
 
 .ticket-list:nth-last-child(2) {
-  padding: 24px 0 13px;
+  padding: 24px 5% 13px 0;
   border-top: 1px solid var(--border-color);
 }
 /* get your ticket section ended here */
@@ -997,7 +997,7 @@ header nav { flex-basis: 74%; }
   justify-content: space-between;
 }
 
-.bottom-footer nav { flex-basis: 61%; }
+.bottom-footer nav { flex-basis: 64%; }
 
 .footer-navbar {
   display: flex;
@@ -1005,7 +1005,7 @@ header nav { flex-basis: 74%; }
 }
 
 .footer-menu-list { margin-right: 3%; }
-.bottom-footer-content { flex-basis: 26%; }
+.bottom-footer-content { flex-basis: 24%; }
 .bottom-footer-content .paragraph:first-child { margin-bottom: 18px; }
 .bottom-footer-content .paragraph { font-size: 12px; }
 .credit { color: var(--paragraph-color); }
