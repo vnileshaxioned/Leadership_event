@@ -4,8 +4,12 @@
     <footer>
       <div class="wrapper">
         <div class="top-footer">
+          <?php
+            $blog_name = get_bloginfo('name');
+            $blog_url = get_bloginfo('url');
+          ?>
           <h6 class="footer-heading">
-            <a href="/index.html" class="main-logo" title="Leadership event">Leadership event</a>
+            <a href="<?php echo $blog_url; ?>" class="main-logo" title="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a>
           </h6>
           <ul class="footer-social-icon">
             <li class="footer-social-list">
@@ -23,22 +27,12 @@
           </ul>
         </div>
         <div class="bottom-footer">
-          <nav>
-            <ul class="footer-navbar">
-              <li class="footer-menu-list">
-                <a href="#FIXME" class="footer-menu" title="Our story">Our story</a>
-              </li>
-              <li class="footer-menu-list">
-                <a href="#FIXME" class="footer-menu" title="Code of Conduct">Code of Conduct</a>
-              </li>
-              <li class="footer-menu-list">
-                <a href="#FIXME" class="footer-menu" title="Privacy and Terms">Privacy and Terms</a>
-              </li>
-              <li class="footer-menu-list">
-                <a href="#FIXME" class="footer-menu" title="Contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
+          <?php wp_nav_menu( array(
+            'theme_location' => 'secondary',
+            'menu_class' => 'footer-navbar',
+            'container' => 'nav',
+            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+          ) ); ?>
           <div class="bottom-footer-content">
             <p class="paragraph">Copyright &copy; 2022 Leadership Event Co., Ltd. All Rights Reserved.</p>
             <p class="paragraph">Design: <a href="#FIXME" target="_blank" class="credit" title="TemplateMo">TemplateMo</a></p>
