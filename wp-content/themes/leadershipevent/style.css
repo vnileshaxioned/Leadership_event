@@ -188,26 +188,26 @@ h1 { flex-basis: 10%; }
   float: left;
 }
 
-.navbar { flex-basis: 74%; }
+nav { flex-basis: 74%; }
 
-.navbar ul {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.page_item { margin-left: 4.4%; }
+.menu_item { margin-left: 4.4%; }
 
-.page_item a {
+.menu_item a {
   color: #fff;
   font-size: 12px;
   font-weight: 700;
   transition: all .3s ease;
 }
 
-.page_item:last-child { flex-basis: 14.7%; }
+.menu_item:last-child { flex-basis: 14.7%; }
 
-.buy-ticket-button {
+.menu_item:last-child a {
   padding: 10px 14%;
   background-color: var(--header-ticket);
   border-radius: 30px;
