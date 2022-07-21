@@ -205,9 +205,9 @@ nav { flex-basis: 74%; }
   transition: all .3s ease;
 }
 
-.menu-item:last-child { flex-basis: 14.7%; }
+.navbar .menu-item:last-child { flex-basis: 14.7%; }
 
-.menu-item:last-child a {
+.navbar .menu-item:last-child a {
   padding: 10px 14%;
   background-color: var(--header-ticket);
   border-radius: 30px;
@@ -1004,15 +1004,20 @@ nav { flex-basis: 74%; }
   align-items: center;
 }
 
-.footer-menu-list { margin-right: 3%; }
+.footer-menu-list {
+  margin-right: 3%;
+  margin-left: 0;
+}
+
 .bottom-footer-content { flex-basis: 24%; }
 .bottom-footer-content .paragraph:first-child { margin-bottom: 18px; }
 .bottom-footer-content .paragraph { font-size: 12px; }
 .credit { color: var(--paragraph-color); }
 
-.footer-menu {
+.footer-menu-list a {
   color: var(--paragraph-color);
   font-size: 12px;
+  font-weight: normal;
   transition: all .3s ease;
 }
 
@@ -1043,8 +1048,9 @@ nav { flex-basis: 74%; }
 /*media query starts*/
 /*media query for hover starts here*/
 @media only screen and (min-width: 995px) {
-  .menu-item:hover { color: var(--heading-color); }
+  .navbar .menu-item a:hover { color: var(--heading-color); }
 
+  .navbar .menu-item:last-child a:hover,
   .slide-down-button:hover,
   .buy-ticket-button:hover {
     background-color: var(--heading-color);
@@ -1093,7 +1099,7 @@ nav { flex-basis: 74%; }
     border-left: 2px solid var(--heading-color);
   }
 
-  .footer-menu:hover,
+  .footer-menu-list a:hover,
   .credit:hover,
   .schedule-tab-list:hover .schedule-tab-heading {
     color: var(--heading-color);
