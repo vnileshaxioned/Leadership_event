@@ -6,7 +6,7 @@
   <section class="get-your-tickets">
     <div class="wrapper">
       <?php
-        echo $title ? '<h4 class="section-heading">'.$title.'</h4>' : null;
+        echo $title ? $title : null;
           if ($tickets) { ?>
         <ul class="ticket-content">
           <?php

@@ -10,7 +10,7 @@
   <section class="here-you-go">
     <div class="wrapper">
       <?php 
-        echo $title ? '<h4 class="section-heading">'.$title.'</h4>' : null;
+        echo $title ? $title : null;
           if ($location || $location_title || $address || $email_id || $phone_number) { ?>
         <ul class="venue-content">
           <?php //if ($location) { ?>
