@@ -10,7 +10,7 @@
       <?php if ($section_content || $register_cta) { ?>
         <ul class="event-speaker-content">
           <?php
-            echo $section_content ? '<li class="left-speaker-content">'.$section_content.'</li>' : null;
+            echo $section_content ? '<li class="left-speaker-content"><div class="wysiwyg-editor">'.$section_content.'</div></li>' : null;
 
             if ($register_cta) {
               $register_title = $register_cta['title'];

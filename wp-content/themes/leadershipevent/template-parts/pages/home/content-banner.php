@@ -18,7 +18,7 @@
       <?php } 
         if ($title || $event_date_from || $event_date_to || $event_location) { ?>
         <div class="banner-content">
-          <?php echo $title ? $title : null; 
+          <?php echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null; 
             if ($event_date_from || $event_date_to || $event_location) { ?>
             <div class="date-location">
               <?php

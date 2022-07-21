@@ -12,7 +12,7 @@
       <ul class="story-content">
         <?php if ($left_content) { ?>
           <li class="leadership-conference">
-            <?php echo $left_content ? $left_content : null; ?>
+            <?php echo $left_content ? '<div class="wysiwyg-editor">'.$left_content.'</div>' : null; ?>
             <ul class="action-container">
               <li class="action-links">
                 <a href="#FIXME" class="action-speaker-button action-button" title="Meet speakers">Meet speakers</a>
@@ -25,7 +25,7 @@
         <?php }
           if ($right_content || $speaker_image || $tag_line) { ?>
           <li class="leadership-conference">
-            <?php echo $right_content ? $right_content : null; 
+            <?php echo $right_content ? '<div class="wysiwyg-editor">'.$right_content.'</div>' : null; 
               if ($speaker_image || $tag_line) { ?>
               <ul class="people-container">
                 <?php

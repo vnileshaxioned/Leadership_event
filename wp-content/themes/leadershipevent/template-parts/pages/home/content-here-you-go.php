@@ -10,7 +10,7 @@
   <section class="here-you-go">
     <div class="wrapper">
       <?php 
-        echo $title ? $title : null;
+        echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null;
           if ($location || $location_title || $address || $email_id || $phone_number) { ?>
         <ul class="venue-content">
           <?php //if ($location) { ?>
