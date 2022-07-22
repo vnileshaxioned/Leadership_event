@@ -14,17 +14,17 @@
             $video_mime_type = $content['video']['mime_type'];
 
             if ($title || $image_url || $video_url) { ?>
-          <li class="highlight-list">
-            <?php if ($image_url) { ?>
-              <figure class="highlight-image">
-                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
-              </figure>
-            <?php } 
-              echo $title ? '<h3 class="highlight-heading"><a href="#FIXME" class="highlight-link">'.$title.'</a></h3>' : null; ?>
-          </li>
-        <?php }
-          } ?>
-      </ul>
-    </div>
-  </section>
-<?php } ?>
+            <li class="highlight-list">
+              <?php if ($image_url) { ?>
+                <figure class="highlight-image">
+                  <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+                </figure>
+              <?php } 
+                echo $title ? '<h3 class="highlight-heading"><a href="#FIXME" class="highlight-link">'.$title.'</a></h3>' : null; ?>
+            </li>
+          <?php }
+            } ?>
+        </ul>
+      </div>
+    </section>
+  <?php } ?>

@@ -16,7 +16,7 @@
           <li class="speaker-content-list">
             <?php
               echo $name ? '<h5 class="speaker-content-heading">'.$name.'</h5>' : null;
-              echo $position ? '<p class="speaker-position">'.$position.'</p>' : null;
+              echo $position ? '<span class="speaker-position">'.$position.'</span>' : null;
             ?>
           </li>
         <?php }
