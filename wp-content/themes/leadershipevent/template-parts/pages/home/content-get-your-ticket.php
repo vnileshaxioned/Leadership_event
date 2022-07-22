@@ -41,14 +41,14 @@
                       </ul>
                       <?php }
                         if ($short_description) { ?>
-                        <div class="ticket-list">
+                        <div class="ticket-list-description">
                           <span class="paragraph"><?php echo $short_description; ?></span>
                         </div>
                       <?php }
                         if ($buy_tickets_cta) {
                           $cta_title = $buy_tickets_cta['title'];
                           $cta_url = $buy_tickets_cta['url']; ?>
-                        <div class="ticket-list">
+                        <div class="ticket-list-cta">
                           <a href="<?php echo $cta_url; ?>" class="buy-ticket-button" title="<?php echo $cta_title; ?>"><?php echo $cta_title; ?></a>
                         </div>
                       <?php } ?>
