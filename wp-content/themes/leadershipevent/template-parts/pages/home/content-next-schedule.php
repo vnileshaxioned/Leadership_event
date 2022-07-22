@@ -1,7 +1,8 @@
 <?php
   $title = get_sub_field('title');
+  $contents = get_sub_field('contents');
 
-  if ($title) { ?>
+  if ($title || $contents) { ?>
   <section class="next-schedules">
     <div class="wrapper">
       <?php echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null; ?>
@@ -23,60 +24,74 @@
           <span class="schedule-date">July 18, 2022</span>
         </li>
       </ul>
-      <ul class="schedule-post">
-        <li class="schedule-post-list">
-          <figure class="schedule-image">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/schedule/people-smiling-while-conference-room.jpg'; ?>" alt="People Smiling" />
-          </figure>
-          <div class="schedule-post-content">
-            <h5 class="medium-content-heading">Building a famous company</h5>
-            <p class="paragraph">Quisque mollis, ante non semper ultricies, nulla sapien sollicitudin augue, id scelerisque nunc turpis nec urna. Class aptent taciti sociosqu ad litora torquent per conubia.</p>
-            <ul class="schedule-info">
-              <li class="schedule-info-list">
-                <figure class="schedule-info-image">
-                  <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg'; ?>" alt="Smiling Joyfully Female" />
+      <?php if ($contents) { ?>
+        <ul class="schedule-post">
+          <?php
+            foreach ($contents as $content) {
+              $post_id = $content->ID;
+              $title = $content->post_title;
+              $excerpt = $content->post_excerpt;
+              $image = get_field('image', $post_id);
+              $image_url = $image['url'] ? $image['url'] : null;
+              $image_alt = $image['alt'] ? $image['alt'] : $title;
+              $speaker_image = get_field('speaker_image', $post_id);
+              $speaker_image_url = $speaker_image['url'] ? $speaker_image['url'] : null;
+              $speaker_image_alt = $speaker_image['alt'] ? $speaker_image['alt'] : $speaker_name;
+              $speaker_name = get_field('speaker_name', $post_id);
+              $speaker_position = get_field('speaker_position', $post_id);
+              $starting_time = get_field('starting_time', $post_id);
+              $ending_time = get_field('ending_time', $post_id);
+              $room = get_field('room', $post_id);
+
+              if ($title || $excerpt || $image_url || $speaker_image_url || $speaker_name || $speaker_position || $starting_time || $ending_time || $room) { ?>
+            <li class="schedule-post-list">
+              <?php if ($image_url) { ?>
+                <figure class="schedule-image">
+                  <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
                 </figure>
-                <div class="schedule-content">
-                  <h6 class="schedule-content-heading">Isabella</h6>
-                  <p class="schedule-paragraph">Event manager</p>
+              <?php }
+                if ($title || $excerpt) { ?>
+                <div class="schedule-post-content">
+                  <?php
+                    echo $title ? '<h5 class="medium-content-heading">'.$title.'</h5>' : null;
+                    echo $excerpt ? '<p class="paragraph">'.$excerpt.'</p>' : null;
+
+                    if ($speaker_image_url || $speaker_name || $speaker_position || $starting_time || $ending_time || $room) { ?>
+                    <ul class="schedule-info">
+                      <li class="schedule-info-list">
+                        <?php if ($speaker_image_url) { ?>
+                          <figure class="schedule-info-image">
+                            <img src="<?php echo $speaker_image_url; ?>" alt="<?php echo $speaker_image_alt; ?>" />
+                          </figure>
+                        <?php }
+                          if ($speaker_name || $speaker_position) { ?>
+                          <div class="schedule-content">
+                            <?php
+                              echo $speaker_name ? '<h6 class="schedule-content-heading">'.$speaker_name.'</h6>' : null;
+                              echo $speaker_position ? '<p class="schedule-paragraph">'.$speaker_position.'</p>' : null;
+                            ?>
+                          </div>
+                        <?php } ?>
+                      </li>
+                      <?php if ($starting_time && $ending_time) { ?>
+                        <li class="schedule-info-list">
+                          <span class="schedule-duration"><?php echo $starting_time.' - '.$ending_time; ?></span>
+                        </li>
+                      <?php }
+                        if ($room) { ?>
+                        <li class="schedule-info-list">
+                          <span class="schedule-room"><?php echo $room; ?></span>
+                        </li>
+                      <?php } ?>
+                    </ul>
+                  <?php } ?>
                 </div>
-              </li>
-              <li class="schedule-info-list">
-                <span class="schedule-duration">9:00 - 9:45 am</span>
-              </li>
-              <li class="schedule-info-list">
-                <span class="schedule-room">Conference hall 2</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="schedule-post-list">
-          <figure class="schedule-image">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/schedule/jason-goodman-bzqU01v-G54-unsplash.jpg'; ?>" alt="Jason Goodman" />
-          </figure>
-          <div class="schedule-post-content">
-            <h5 class="medium-content-heading">Dev Ops life in corporate</h5>
-            <p class="paragraph">Quisque mollis, ante non semper ultricies, nulla sapien sollicitudin augue, id scelerisque nunc turpis nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-            <ul class="schedule-info">
-              <li class="schedule-info-list">
-                <figure class="schedule-info-image">
-                  <img src="<?php echo get_template_directory_uri().'/assets/images/avatar/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university.jpg'; ?>" alt="Asian woman" />
-                </figure>
-                <div class="schedule-content">
-                  <h6 class="schedule-content-heading">Samantha</h6>
-                  <p class="schedule-paragraph">TOP LEVEL SPEAKER</p>
-                </div>
-              </li>
-              <li class="schedule-info-list">
-                <span class="schedule-duration">10:00 - 10:45 am</span>
-              </li>
-              <li class="schedule-info-list">
-                <span class="schedule-room">100-a room</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+              <?php } ?>
+            </li>
+          <?php }
+            } ?>
+        </ul>
+      <?php } ?>
     </div>
   </section>
 <?php } ?>

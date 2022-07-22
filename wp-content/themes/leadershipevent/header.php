@@ -11,17 +11,18 @@
     <!--header section start-->
     <header>
       <div class="wrapper">
-        <?php
-          $blog_name = get_bloginfo('name');
-          $blog_url = get_bloginfo('url');
+        <?php 
+          get_template_part('template-parts/modules/header/header', 'logo');
+
+          wp_nav_menu(array(
+            'theme_location' => 'primary',
+            'menu_class' => 'navbar',
+            'container' => 'nav',
+            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+          ));
+          
+          get_template_part('template-parts/modules/header/header', 'buy-tickets-cta');
         ?>
-        <h1><a href="<?php echo $blog_url; ?>" class="main-logo" title="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h1>
-        <?php wp_nav_menu( array(
-          'theme_location' => 'primary',
-          'menu_class' => 'navbar',
-          'container' => 'nav',
-          'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-        ) ); ?>
       </div>
     </header>
     <!--header section start-->
