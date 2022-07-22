@@ -8,19 +8,18 @@
   <section class="event-speaker" <?php echo $background_image_url ? 'style="background-image: url('.$background_image_url.');"' : null; ?> >
     <div class="wrapper">
       <?php if ($section_content || $register_cta) { ?>
-        <ul class="event-speaker-content">
+        <div class="event-speaker-content">
           <?php
-            echo $section_content ? '<li class="left-speaker-content"><div class="wysiwyg-editor">'.$section_content.'</div></li>' : null;
+            echo $section_content ? '<div class="left-speaker-content wysiwyg-editor">'.$section_content.'</div>' : null;
 
             if ($register_cta) {
               $register_title = $register_cta['title'];
-              $register_url = $register_cta['url'];
-              ?>
-            <li class="right-speaker-content">
+              $register_url = $register_cta['url']; ?>
+            <div class="right-speaker-content">
               <a href="<?php echo $register_url; ?>" class="event-register-button" title="<?php echo $register_title; ?>"><?php echo $register_title; ?></a>
-            </li>
+            </div>
           <?php } ?>
-        </ul>
+        </div>
       <?php } ?>
     </div>
   </section>

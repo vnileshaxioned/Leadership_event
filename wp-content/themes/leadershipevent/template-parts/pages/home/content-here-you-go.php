@@ -11,14 +11,13 @@
     <div class="wrapper">
       <?php 
         echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null;
-          if ($location || $location_title || $address || $email_id || $phone_number) { ?>
+
+        if ($location || $location_title || $address || $email_id || $phone_number) { ?>
         <div class="venue-content">
-          <?php //if ($location) { ?>
-            <div class="venue-list">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841333896177!2d-73.98773128504497!3d40.75797467932691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1658483099024!5m2!1sen!2sin" class="map-location" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          <?php //}
-            if ($location_title || $address || $email_id || $phone_number) { ?>
+          <div class="venue-list">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841333896177!2d-73.98773128504497!3d40.75797467932691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1658483099024!5m2!1sen!2sin" class="map-location" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <?php if ($location_title || $address || $email_id || $phone_number) { ?>
             <div class="venue-list">
               <ul class="venu-right-content">
                 <?php if ($location_title) { ?>
@@ -28,7 +27,7 @@
                 <?php }
                   if ($address) { ?>
                   <li class="venu-contact-list">
-                    <?php echo $address ? '<span class="venue-address">'.$address.'</span>' : null; ?>
+                    <?php echo $address ? '<address class="venue-address">'.$address.'</address>' : null; ?>
                   </li>
                 <?php }
                   if ($email_id) { ?>

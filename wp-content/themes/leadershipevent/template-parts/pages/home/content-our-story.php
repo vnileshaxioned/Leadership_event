@@ -11,9 +11,9 @@
   <section class="our-story">
     <div class="wrapper">
       <?php echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null; ?>
-      <ul class="story-content">
+      <div class="story-content">
         <?php if ($left_content || $primary_cta || $secondary_cta) { ?>
-          <li class="leadership-conference">
+          <div class="leadership-conference">
             <?php echo $left_content ? '<div class="wysiwyg-editor">'.$left_content.'</div>' : null;
               if ($primary_cta || $secondary_cta) { ?>
               <ul class="action-container">
@@ -33,10 +33,10 @@
                 <?php } ?>
               </ul>
             <?php } ?>
-          </li>
+          </div>
         <?php }
           if ($right_content || $speaker_image || $tag_line) { ?>
-          <li class="leadership-conference">
+          <div class="leadership-conference">
             <?php echo $right_content ? '<div class="wysiwyg-editor">'.$right_content.'</div>' : null; 
               if ($speaker_image || $tag_line) { ?>
               <ul class="people-container">
@@ -54,14 +54,14 @@
                   } 
                   if ($tag_line) { ?>
                   <li class="people-list">
-                    <p class="paragraph"><?php echo $tag_line; ?></p>
+                    <span class="paragraph"><?php echo $tag_line; ?></span>
                   </li>
                 <?php } ?>
               </ul>
             <?php } ?>
-          </li>
+          </div>
         <?php } ?>
-      </ul>
+      </div>
     </div>
   </section>
 <?php } ?>
