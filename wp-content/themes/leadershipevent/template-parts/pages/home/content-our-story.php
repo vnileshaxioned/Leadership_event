@@ -13,7 +13,7 @@
       <?php echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null; ?>
       <div class="story-content">
         <?php if ($left_content || $primary_cta || $secondary_cta) { ?>
-          <div class="leadership-conference">
+          <div class="leadership-conference-left">
             <?php echo $left_content ? '<div class="wysiwyg-editor">'.$left_content.'</div>' : null;
               if ($primary_cta || $secondary_cta) { ?>
               <ul class="action-container">
@@ -36,7 +36,7 @@
           </div>
         <?php }
           if ($right_content || $speaker_image || $tag_line) { ?>
-          <div class="leadership-conference">
+          <div class="leadership-conference-right">
             <?php echo $right_content ? '<div class="wysiwyg-editor">'.$right_content.'</div>' : null; 
               if ($speaker_image || $tag_line) { ?>
               <ul class="people-container">
