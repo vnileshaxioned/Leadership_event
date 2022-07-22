@@ -44,54 +44,54 @@
               $room = get_field('room', $post_id);
 
               if ($title || $excerpt || $image_url || $speaker_image_url || $speaker_name || $speaker_position || $starting_time || $ending_time || $room) { ?>
-            <li class="schedule-post-list">
-              <?php if ($image_url) { ?>
-                <figure class="schedule-image">
-                  <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
-                </figure>
-              <?php }
-                if ($title || $excerpt) { ?>
-                <div class="schedule-post-content">
-                  <?php
-                    echo $title ? '<h5 class="medium-content-heading">'.$title.'</h5>' : null;
-                    echo $excerpt ? '<p class="paragraph">'.$excerpt.'</p>' : null;
+              <li class="schedule-post-list">
+                <?php if ($image_url) { ?>
+                  <figure class="schedule-image">
+                    <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+                  </figure>
+                <?php }
+                  if ($title || $excerpt) { ?>
+                  <div class="schedule-post-content">
+                    <?php
+                      echo $title ? '<h5 class="medium-content-heading">'.$title.'</h5>' : null;
+                      echo $excerpt ? '<p class="paragraph">'.$excerpt.'</p>' : null;
 
-                    if ($speaker_image_url || $speaker_name || $speaker_position || $starting_time || $ending_time || $room) { ?>
-                    <ul class="schedule-info">
-                      <li class="schedule-info-list">
-                        <?php if ($speaker_image_url) { ?>
-                          <figure class="schedule-info-image">
-                            <img src="<?php echo $speaker_image_url; ?>" alt="<?php echo $speaker_image_alt; ?>" />
-                          </figure>
+                      if ($speaker_image_url || $speaker_name || $speaker_position || $starting_time || $ending_time || $room) { ?>
+                      <ul class="schedule-info">
+                        <li class="schedule-info-list">
+                          <?php if ($speaker_image_url) { ?>
+                            <figure class="schedule-info-image">
+                              <img src="<?php echo $speaker_image_url; ?>" alt="<?php echo $speaker_image_alt; ?>" />
+                            </figure>
+                          <?php }
+                            if ($speaker_name || $speaker_position) { ?>
+                            <div class="schedule-content">
+                              <?php
+                                echo $speaker_name ? '<h6 class="schedule-content-heading">'.$speaker_name.'</h6>' : null;
+                                echo $speaker_position ? '<p class="schedule-paragraph">'.$speaker_position.'</p>' : null;
+                              ?>
+                            </div>
+                          <?php } ?>
+                        </li>
+                        <?php if ($starting_time && $ending_time) { ?>
+                          <li class="schedule-info-list">
+                            <span class="schedule-duration"><?php echo $starting_time.' - '.$ending_time; ?></span>
+                          </li>
                         <?php }
-                          if ($speaker_name || $speaker_position) { ?>
-                          <div class="schedule-content">
-                            <?php
-                              echo $speaker_name ? '<h6 class="schedule-content-heading">'.$speaker_name.'</h6>' : null;
-                              echo $speaker_position ? '<p class="schedule-paragraph">'.$speaker_position.'</p>' : null;
-                            ?>
-                          </div>
+                          if ($room) { ?>
+                          <li class="schedule-info-list">
+                            <span class="schedule-room"><?php echo $room; ?></span>
+                          </li>
                         <?php } ?>
-                      </li>
-                      <?php if ($starting_time && $ending_time) { ?>
-                        <li class="schedule-info-list">
-                          <span class="schedule-duration"><?php echo $starting_time.' - '.$ending_time; ?></span>
-                        </li>
-                      <?php }
-                        if ($room) { ?>
-                        <li class="schedule-info-list">
-                          <span class="schedule-room"><?php echo $room; ?></span>
-                        </li>
-                      <?php } ?>
-                    </ul>
-                  <?php } ?>
-                </div>
-              <?php } ?>
-            </li>
-          <?php }
-            } ?>
-        </ul>
-      <?php } ?>
-    </div>
-  </section>
-<?php } ?>
+                      </ul>
+                    <?php } ?>
+                  </div>
+                <?php } ?>
+              </li>
+            <?php }
+              } ?>
+          </ul>
+        <?php } ?>
+      </div>
+    </section>
+  <?php } ?>
