@@ -12,16 +12,14 @@
       <?php 
         echo $title ? '<div class="wysiwyg-editor">'.$title.'</div>' : null;
           if ($location || $location_title || $address || $email_id || $phone_number) { ?>
-        <ul class="venue-content">
+        <div class="venue-content">
           <?php //if ($location) { ?>
-            <li class="venue-list">
-              <figure class="map-location">
-                <img src="https://dummyimage.com/500x294/000/fff.jpg" alt="Google Map">
-              </figure>
-            </li>
+            <div class="venue-list">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841333896177!2d-73.98773128504497!3d40.75797467932691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1658483099024!5m2!1sen!2sin" class="map-location" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           <?php //}
             if ($location_title || $address || $email_id || $phone_number) { ?>
-            <li class="venue-list">
+            <div class="venue-list">
               <ul class="venu-right-content">
                 <?php if ($location_title) { ?>
                   <li class="venu-contact-head">
@@ -44,9 +42,9 @@
                   </li>
                 <?php } ?>
               </ul>
-            </li>
+            </div>
           <?php } ?>
-        </ul>
+        </div>
       <?php } ?>
     </div>
   </section>
