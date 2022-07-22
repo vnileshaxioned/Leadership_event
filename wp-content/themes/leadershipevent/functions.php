@@ -7,6 +7,28 @@ function test_theme_script() {
   wp_enqueue_style('custom-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 }
 
+// for option page
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+    'page_title' 	=> 'Custom Option Page',
+    'menu_title'	=> 'Custom Option Page',
+    'menu_slug' 	=> 'custom-option-page',
+    'icon_url'    => 'dashicons-admin-settings',
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Header Section',
+    'menu_title'	=> 'Header',
+    'parent_slug' 	=> 'custom-option-page',
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Footer Section',
+    'menu_title'	=> 'Footer',
+    'parent_slug' 	=> 'custom-option-page',
+  ));
+}
+
 // theme support
 add_action('after_setup_theme', 'leadershipevent_theme_setup');
 function leadershipevent_theme_setup() {
