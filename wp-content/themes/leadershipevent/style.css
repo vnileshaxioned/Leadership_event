@@ -166,10 +166,9 @@ header .wrapper {
   padding: 12px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-h1 { flex-basis: 10%; }
+h1 { flex-basis: 13%; }
 
 .main-logo {
   display: flex;
@@ -180,15 +179,8 @@ h1 { flex-basis: 10%; }
   text-transform: uppercase;
 }
 
-.main-logo::before {
-  content: '\f140';
-  margin-right: 4%;
-  font-size: 36px;
-  font-family: 'FontAwesome';
-  float: left;
-}
-
-nav { flex-basis: 74%; }
+.main-logo figure { margin-right: 4%; }
+nav { flex-basis: 75%; }
 
 .navbar {
   display: flex;
@@ -205,12 +197,18 @@ nav { flex-basis: 74%; }
   transition: all .3s ease;
 }
 
-.navbar .menu-item:last-child { flex-basis: 14.7%; }
+.cta {
+  margin-left: 3.2%;
+  flex-basis: 8.7%;
+}
 
-.navbar .menu-item:last-child a {
+.buy-ticket-button {
   padding: 10px 14%;
-  background-color: var(--header-ticket);
   border-radius: 30px;
+  background-color: var(--header-ticket);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
   transition: all .3s ease;
 }
 /*=================================
@@ -376,10 +374,10 @@ nav { flex-basis: 74%; }
   justify-content: space-between;
 }
 
-.leadership-conference:first-child { flex-basis: 47%; }
-.leadership-conference { flex-basis: 50%; }
+.leadership-conference-left { flex-basis: 47%; }
+.leadership-conference-right { flex-basis: 50%; }
 
-.content-heading {
+.leadership-conference-left h5 {
   padding: 18px 0 14px;
   font-size: 26px;
   font-weight: 600;
@@ -408,12 +406,11 @@ nav { flex-basis: 74%; }
   transition: all .3s ease;
 }
 
-.medium-content-heading {
+.leadership-conference-right h5 {
+  padding: 16px 0 44px;
   font-size: 26px;
   font-weight: 700;
 }
-
-.leadership-conference .medium-content-heading { padding: 16px 0 44px; }
 
 .people-container {
   display: flex;
@@ -763,12 +760,15 @@ nav { flex-basis: 74%; }
 .ticket-price { font-size: 22px; }
 
 .ticket-container {
-  padding: 32px;
+  padding: 32px 9.5% 0;
   display: flex;
   flex-direction: column;
 }
 
-.ticket-list .paragraph { padding-bottom: 16px; }
+.ticket-list .paragraph {
+  padding-bottom: 16px;
+  display: block;
+}
 
 .ticket-list .paragraph::before {
   margin-right: 4%;
@@ -779,8 +779,9 @@ nav { flex-basis: 74%; }
 .ticket-list:nth-child(1) .paragraph::before { content: '\f0f4'; }
 .ticket-list:nth-child(2) .paragraph::before { content: '\f11b'; }
 .ticket-list:nth-child(3) .paragraph::before { content: '\f27a'; }
+.ticket-list-cta { padding: 0 9.5% 32px; }
 
-.ticket-list .buy-ticket-button {
+.ticket-list-cta .buy-ticket-button {
   padding: 10px 7%;
   border-radius: 20px;
   background-color: var(--header-color);
@@ -791,11 +792,13 @@ nav { flex-basis: 74%; }
   transition: all .3s ease;
 }
 
-.ticket-list:nth-child(3) .paragraph { padding-bottom: 28px; }
+.ticket-list:last-child .paragraph { padding-bottom: 28px; }
+.ticket-list-description { padding: 0 9.5% 13px; }
 
-.ticket-list:nth-last-child(2) {
-  padding: 24px 5% 13px 0;
+.ticket-list-description .paragraph {
+  padding: 24px 6% 0 0;
   border-top: 1px solid var(--border-color);
+  display: block;
 }
 /* get your ticket section ended here */
 
@@ -810,6 +813,11 @@ nav { flex-basis: 74%; }
 }
 
 .venue-list { flex-basis: 48.5%; }
+
+.map-location {
+  width: 100%;
+  min-height: 100%;
+}
 
 .venue-list:last-child {
   border-radius: 20px;
@@ -946,7 +954,9 @@ nav { flex-basis: 74%; }
 
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
+.footer-heading { flex-basis: 13%; }
+
 .top-footer {
   padding: 32px 0 44px;
   border-bottom: 1px solid var(--border-color);
@@ -1009,7 +1019,12 @@ nav { flex-basis: 74%; }
   margin-left: 0;
 }
 
-.bottom-footer-content { flex-basis: 24%; }
+.bottom-footer-content {
+  display: flex;
+  flex-basis: 24%;
+  flex-direction: column;
+}
+
 .bottom-footer-content .paragraph:first-child { margin-bottom: 18px; }
 .bottom-footer-content .paragraph { font-size: 12px; }
 .credit { color: var(--paragraph-color); }
@@ -1050,7 +1065,6 @@ nav { flex-basis: 74%; }
 @media only screen and (min-width: 995px) {
   .navbar .menu-item a:hover { color: var(--heading-color); }
 
-  .navbar .menu-item:last-child a:hover,
   .slide-down-button:hover,
   .buy-ticket-button:hover {
     background-color: var(--heading-color);
