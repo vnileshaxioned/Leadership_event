@@ -14,9 +14,6 @@
       the_row();
       
       switch (get_row_layout()) {
-        case 'highlight_section':
-          get_template_part('template-parts/pages/home/content', 'highlight');
-          break;
         case 'our_story_section';
           get_template_part('template-parts/pages/home/content', 'our-story');
           break;
